@@ -1,30 +1,34 @@
-# React + TypeScript + Vite
+# React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+### Tech stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [React](https://react.dev)
+- [Vite](https://vitejs.dev)
+- [Shadcn UI](https://ui.shadcn.com)
 
-## Expanding the ESLint configuration
+### Initial Setup
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+1. **Install Dependencies:**
+   - Install project dependencies from the root folder using the following command:
 
-- Configure the top-level `parserOptions` property like this:
+     ```bash
+     npm install
+     ```
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+2. **Run Development Server:**
+   - To run the development server for a specific app, use one of the following commands from the root folder:
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+     ```bash
+     npm run dev
+     ```
+
+### Common project scripts
+
+| Script           | Description                                                               |
+|------------------|---------------------------------------------------------------------------|
+| `build`          | Run the build command for each workspace.                                 |
+| `dev`            | Run the development server for the app project.                           |
+| `format`         | Format workspaces with Prettier, writing changes and caching results.     |
+| `lint`           | Lint workspaces with ESLint, fixing issues and caching results.           |
