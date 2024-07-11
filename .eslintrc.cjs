@@ -14,5 +14,14 @@ module.exports = {
       'warn',
       { allowConstantExport: true },
     ],
+    'prettier/prettier': 'error', // Ensure ESLint shows errors for Prettier violations
+    'no-extra-semi': 'off', // Disable ESLint's no-extra-semi rule
+    'no-mixed-spaces-and-tabs': 'off', // Disable ESLint's no-mixed-spaces-and-tabs rule
+    'no-unexpected-multiline': 'off',
+  },
+  settings: {
+    react: {
+      version: 'detect', // Automatically detect the React version
+    },
   },
 }

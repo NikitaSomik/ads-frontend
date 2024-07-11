@@ -1,11 +1,7 @@
-import {Dashboard} from "./components/Dashboard.tsx";
+import { DashboardPage } from '@/modules/dashboard/DashboardPage.tsx';
 
 function App() {
-  return (
-      <>
-          <Dashboard />
-      </>
-  )
+  return <DashboardPage />;
 }
 
-export default App
+export default App;
