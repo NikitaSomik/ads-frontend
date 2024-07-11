@@ -1,14 +1,6 @@
 import { useState, useEffect } from 'react';
 import { DashboardApi } from '@/modules/dashboard/dashboardApi/dashboardApi';
-
-interface Ad {
-  id: number;
-  title: string;
-  description: string;
-  impressions: number;
-  clicks: number;
-  createdAt: string;
-}
+import { Ad } from '../types';
 
 const useAds = () => {
   const [ads, setAds] = useState<Ad[]>([]);
