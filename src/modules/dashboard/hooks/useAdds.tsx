@@ -1,25 +1,35 @@
 import { useState, useEffect } from 'react';
-import api from '@/axiosConfig';
+import { DashboardApi } from '@/modules/dashboard/dashboardApi/dashboardApi';
+
+interface Ad {
+  id: number;
+  title: string;
+  description: string;
+  impressions: number;
+  clicks: number;
+  createdAt: string;
+}
 
 const useAds = () => {
-  const [ads, setAds] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [ads, setAds] = useState<Ad[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const fetchAds = async () => {
+    const fetchData = async () => {
       try {
-        const response = await api.get('/ads');
-        setAds(response.data.data);
+        const response = await DashboardApi.getAds();
+        const data = response.data.data;
+        setAds(data);
         setLoading(false);
-      } catch (error) {
+      } catch (error: any) {
         console.error('Error fetching ads:', error);
-        setError(error);
+        setError(error.message || 'Error fetching ads');
         setLoading(false);
       }
     };
 
-    fetchAds();
+    fetchData();
   }, []);
 
   return { ads, loading, error };

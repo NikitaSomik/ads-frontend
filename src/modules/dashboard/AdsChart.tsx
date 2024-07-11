@@ -28,8 +28,16 @@ const chartConfig = {
 } satisfies ChartConfig;
 
 export function AdsChart() {
-  const { chartData, totalImpressions, totalClicks } = useAdsStatistics();
-  const [activeChart, setActiveChart] = useState('impressions');
+  const { chartData, totalImpressions, totalClicks, loading, error } = useAdsStatistics();
+  const [activeChart, setActiveChart] = useState<'impressions' | 'clicks'>('impressions');
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Error loading chart data: {error.message}</div>;
+  }
 
   return (
     <Card>
