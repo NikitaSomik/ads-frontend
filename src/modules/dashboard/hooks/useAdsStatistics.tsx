@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import {DashboardApi} from '@/modules/dashboard/dashboardApi/dashboardApi';
+import { DashboardApi } from '@/modules/dashboard/dashboardApi/dashboardApi';
 import { DailyStatistic } from '../types';
 
 const useAdsStatistics = () => {
@@ -13,7 +13,8 @@ const useAdsStatistics = () => {
     const fetchData = async () => {
       try {
         const response = await DashboardApi.getAdsStatistics();
-        const { daily_statistics, total_impressions, total_clicks } = response.data.data;
+        const { daily_statistics, total_impressions, total_clicks } =
+          response.data.data;
         setChartData(daily_statistics);
         setTotalImpressions(total_impressions);
         setTotalClicks(total_clicks);

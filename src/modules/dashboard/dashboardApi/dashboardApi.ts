@@ -1,10 +1,10 @@
-import api from '@/axiosConfig'
+import api from '@/axiosConfig';
 import { Ad, DailyStatistic } from '../types';
 
 const URL = '/ads';
 
 function getAds() {
-  return api.get<Ad[]>(`${URL}`)
+  return api.get<Ad[]>(`${URL}`);
 }
 
 function getAdsStatistics() {
@@ -13,5 +13,5 @@ function getAdsStatistics() {
 
 export const DashboardApi = {
   getAds,
-  getAdsStatistics
+  getAdsStatistics,
 };
