@@ -1,14 +1,14 @@
 import api from '@/axiosConfig';
-import { Ad, DailyStatistic } from '../types';
+import { Ad, AdStatistics } from '../types';
 
 const URL = '/ads';
 
 function getAds() {
-  return api.get<Ad[]>(`${URL}`);
+  return api.get<{ data: Ad[] }>(`${URL}`);
 }
 
 function getAdsStatistics() {
-  return api.get<DailyStatistic[]>(`${URL}/statistics`);
+  return api.get<{ data: AdStatistics }>(`${URL}/statistics`);
 }
 
 export const DashboardApi = {

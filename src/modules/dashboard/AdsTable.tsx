@@ -17,7 +17,7 @@ export function AdsTable() {
   }
 
   if (error) {
-    return <div>Error: {error}</div>;
+    return <div>Error loading chart data: {error.message}</div>;
   }
 
   return (

@@ -13,7 +13,7 @@ interface Ad {
 const useAds = () => {
   const [ads, setAds] = useState<Ad[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
-  const [error, setError] = useState<string | null>(null);
+  const [error, setError] = useState<Error | null>(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -22,9 +22,9 @@ const useAds = () => {
         const data = response.data.data;
         setAds(data);
         setLoading(false);
-      } catch (error: any) {
+      } catch (error) {
         console.error('Error fetching ads:', error);
-        setError(error.message || 'Error fetching ads');
+        setError(error as Error);
         setLoading(false);
       }
     };
