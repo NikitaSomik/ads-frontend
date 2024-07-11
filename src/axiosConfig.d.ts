@@ -1,7 +1,5 @@
-import axios from 'axios';
-
-const api = axios.create({
-  baseURL: 'http://localhost:80/api',
-});
-
-export default api;
+declare module '@/axiosConfig' {
+  import { AxiosInstance } from 'axios';
+  const api: AxiosInstance;
+  export default api;
+}
